@@ -43,7 +43,11 @@ import {
                           </IonItem>
                       </IonMenuToggle>
                   ))}
-                  
+                                              {/*Logout Button*/}
+            <IonButton routerLink="/it35-lab" routerDirection="back" expand="full">
+                     <IonIcon icon={logOutOutline} slot="start"> </IonIcon>
+                         Logout
+            </IonButton>
               </IonContent>
           </IonMenu>
           
