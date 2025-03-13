@@ -1,7 +1,7 @@
 import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import Login from './pages/Login';
+import { Login, Register } from './pages/Login'; // Make sure Register is correctly imported
 import Menu from './pages/Menu';
 
 /* Core CSS required for Ionic components to work properly */
@@ -20,17 +20,6 @@ import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
 
-/**
- * Ionic Dark Mode
- * -----------------------------------------------------
- * For more info, please see:
- * https://ionicframework.com/docs/theming/dark-mode
- */
-
-/* import '@ionic/react/css/palettes/dark.always.css'; */
-/* import '@ionic/react/css/palettes/dark.class.css'; */
-import '@ionic/react/css/palettes/dark.system.css';
-
 /* Theme variables */
 import './theme/variables.css';
 
@@ -40,8 +29,10 @@ const App: React.FC = () => (
   <IonApp>
     <IonReactRouter>
       <IonRouterOutlet>
-      <Route exact path="/it35-lab" component={Login} />
-      <Route  path="/it35-lab/app" component={Menu} />
+        <Route exact path="/it35-lab" component={Login} />
+        <Route exact path="/it35-lab/register" component={Register} />
+        <Route path="/it35-lab/app" component={Menu} />
+        <Redirect exact from="/" to="/it35-lab" />
       </IonRouterOutlet>
     </IonReactRouter>
   </IonApp>
