@@ -31,7 +31,7 @@ const Favorites: React.FC = () => {
           <IonContent fullscreen>
               <IonCard>
                   <IonCardHeader>
-                      <IonCardTitle>TOP FOUR FAVORITES TEAMS IN NBA</IonCardTitle>
+                      <IonCardTitle>TOP FAVORITES TEAMS IN NBA</IonCardTitle>
                       
                   </IonCardHeader>
                   <IonCardContent>
@@ -48,13 +48,6 @@ const Favorites: React.FC = () => {
                                   <img alt="Item 2" src="https://i.pinimg.com/originals/53/1b/f3/531bf3c54422daf61bfa0b9725ef0410.jpg" /> 
                               </IonThumbnail>
                               <IonLabel>GOLDEN STATES WARRIORS</IonLabel>
-                          </IonItem>
-
-                          <IonItem>
-                              <IonThumbnail slot="start">
-                                  <img alt="Item 3" src="https://www.hatchwise.com/wp-content/uploads/2024/10/image-12.png" /> 
-                              </IonThumbnail>
-                              <IonLabel>DALLAS MAVERICKS</IonLabel>
                           </IonItem>
 
                           <IonItem lines="none">
