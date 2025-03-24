@@ -168,6 +168,7 @@ const Register: React.FC = () => {
 
             </IonContent>
         </IonPage>
+        //halo
     );
 };
 
