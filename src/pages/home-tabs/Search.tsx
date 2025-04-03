@@ -6,23 +6,22 @@ import {
     IonPage, 
     IonSearchbar, 
     IonTitle, 
-    IonToolbar 
+    IonToolbar,
+    IonRadio,
+    IonRadioGroup,
+
 } from '@ionic/react';
 const Search: React.FC = () => {
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonButtons slot='start'>
-            <IonMenuButton></IonMenuButton>
-          </IonButtons>
-          <IonTitle>Search</IonTitle>
-        </IonToolbar>
-      </IonHeader>
-      <IonContent fullscreen>
-        <IonSearchbar placeholder="Search for something..." />
-      </IonContent>
-    </IonPage>
+    <IonRadioGroup value="strawberries">
+      <IonRadio value="FRIST NAME">MJ </IonRadio>
+      <br />
+      <IonRadio value="LAST NAME">Obsid</IonRadio>
+      <br />
+      <IonRadio value="USERNAME">Magsalos</IonRadio>
+      <br />
+      <IonRadio value="AGE">20</IonRadio>
+    </IonRadioGroup>
   );
 };
 export default Search;

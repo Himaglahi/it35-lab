@@ -57,7 +57,7 @@ const Login: React.FC = () => {
           flexDirection:'column',
           alignItems: 'center',
           justifyContent: 'center',
-          marginTop:'25%'
+          marginTop:'20%'
         }}>
           <IonAvatar
           style={{
@@ -71,7 +71,7 @@ const Login: React.FC = () => {
          }}
         >
         <img 
-            src="https://www.w3schools.com/howto/img_avatar.png" 
+            src="https://www.w3schools.com/howto/img_girl.jpg" 
             alt="User Avatar" 
             style={{ width: '100%', height: '100%' }} 
         />
@@ -80,7 +80,7 @@ const Login: React.FC = () => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-          }}>USER LOGIN</h1>
+          }}>kung DUTERTE ka ayha raka maka login</h1>
           <IonInput
             label="Email" 
             labelPlacement="floating" 
@@ -101,7 +101,7 @@ const Login: React.FC = () => {
           </IonInput>
         </div>
         <IonButton onClick={doLogin} expand="full" shape='round'>
-          Login
+          LOGIN
         </IonButton>
 
         <IonButton routerLink="/it35-lab/register" expand="full" fill="clear" shape='round'>
