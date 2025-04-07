@@ -64,8 +64,8 @@ const Login: React.FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          width: '150px',
-          height: '150px',
+          width: '200px',
+          height: '200px',
           borderRadius: '50%', 
           overflow: 'hidden' 
          }}
