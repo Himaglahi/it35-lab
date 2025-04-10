@@ -80,7 +80,76 @@ const FeedContainer = () => {
     }
   };
 
- 
+  return (
+    <IonApp>
+      <IonPage>
+        <IonHeader>
+          <IonToolbar>
+            <IonTitle>Posts</IonTitle>
+          </IonToolbar>
+        </IonHeader>
+        <IonContent>
+          {user ? (
+            <>
+              <IonCard>
+                <IonCardHeader>
+                  <IonCardTitle>Create Post</IonCardTitle>
+                </IonCardHeader>
+                <IonCardContent>
+                  <IonInput value={postContent} onIonChange={e => setPostContent(e.detail.value!)} placeholder="Write a post..." />
+                  <IonButton onClick={createPost}>Post</IonButton>
+                </IonCardContent>
+              </IonCard>
+
+              {posts.map(post => (
+                <IonCard key={post.post_id}>
+                  <IonCardHeader>
+                    <IonCardTitle>{post.username}</IonCardTitle>
+                    <IonCardSubtitle>{new Date(post.post_created_at).toLocaleString()}</IonCardSubtitle>
+                  </IonCardHeader>
+                 <IonCardContent>
+                 <IonText color="secondary">
+                    <h1>{post.post_content}</h1>
+                  </IonText>
+                 </IonCardContent>
+                  <IonFooter>
+                    <IonButton fill="clear" onClick={() => startEditingPost(post)}>Edit</IonButton>
+                    <IonButton fill="clear" color="danger" onClick={() => deletePost(post.post_id)}>Delete</IonButton>
+                  </IonFooter>
+                </IonCard>
+              ))}
+            </>
+          ) : (
+            <IonLabel>Loading...</IonLabel>
+          )}
+        </IonContent>
+
+        <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
+          <IonHeader>
+            <IonToolbar>
+              <IonTitle>Edit Post</IonTitle>
+            </IonToolbar>
+          </IonHeader>
+          <IonContent>
+            <IonInput value={postContent} onIonChange={e => setPostContent(e.detail.value!)} placeholder="Edit your post..." />
+          </IonContent>
+          <IonFooter>
+            <IonButton onClick={savePost}>Save</IonButton>
+            <IonButton onClick={() => setIsModalOpen(false)}>Cancel</IonButton>
+          </IonFooter>
+        </IonModal>
+
+        <IonAlert
+          isOpen={isAlertOpen}
+          onDidDismiss={() => setIsAlertOpen(false)}
+          header="Success"
+          message="Post updated successfully!"
+          buttons={['OK']}
+        />
+      </IonPage>
+    </IonApp>
+  );
+
 };
 
 export default FeedContainer;
