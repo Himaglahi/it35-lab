@@ -67,8 +67,8 @@ const Login: React.FC = () => {
               </IonAvatar>
             </div>
             
-            <h1 className="login-title">Welcome Back</h1>
-            <p className="login-subtitle">Please sign in to continue</p>
+            <h1 className="login-title">WGAPO KA?</h1>
+            <h2 className="login-subtitle">Sign in daw be cong maka continue baka?</h2>
             
             <div className="form-group">
               <IonInput
@@ -80,7 +80,7 @@ const Login: React.FC = () => {
                 placeholder="Enter Email"
                 value={email}
                 onIonChange={e => setEmail(e.detail.value!)}
-                style={{ '--color': '#000000' }}  // Added black text color
+                style={{ '--color': '#ff9900' }}  // Added black text color
               />
             </div>
             
@@ -92,7 +92,7 @@ const Login: React.FC = () => {
                 placeholder="Password"
                 value={password}
                 onIonChange={e => setPassword(e.detail.value!)}
-                style={{ '--color': '#000000' }}  // Added black text color
+                style={{ '--color': '#ff9900' }}  // Added black text color
               >
                 <IonInputPasswordToggle slot="end"></IonInputPasswordToggle>
               </IonInput>
@@ -148,16 +148,16 @@ const styles = `
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(to bottom right, #f7f9fc, #e2e8f0); /* Light gradient background */
+    background: linear-gradient(to bottom right,rgba(226, 156, 6, 0.9),rgb(0, 0, 0)); /* Light gradient background */
   }
   
   .login-card {
     width: 300%;
     max-width: 600px;
-    background: #ffffff;
+    background:rgb(245, 237, 237);
     border-radius: 16px;
     padding: 32px;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.89);
     transition: transform 0.2s ease-in-out;
   }
 
@@ -175,22 +175,22 @@ const styles = `
   .logo-avatar {
     width: 100px;
     height: 100px;
-    background: #f8f9fa;
+    background:rgba(14, 13, 13, 0.99);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(50, 206, 211, 0.1);
   }
   
   .logo-icon {
     font-size: 80px;
-    color:rgb(0, 0, 0);
+    color:rgb(5, 5, 5);
   }
   
   .login-title {
     text-align: center;
-    color:rgb(12, 73, 0);
+    color:rgb(3, 3, 3);
     margin-bottom: 8px;
     font-size: 26px;
     font-weight: 700;
@@ -199,7 +199,7 @@ const styles = `
   
   .login-subtitle {
     text-align: center;
-    color:rgb(10, 58, 0);
+    color:rgb(0, 0, 0);
     margin-bottom: 32px;
     font-size: 15px;
     line-height: 1.4;
@@ -213,7 +213,7 @@ const styles = `
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-    color:rgb(0, 238, 247);
+    color:rgb(0, 0, 0);
   }
 
   .custom-input {
@@ -221,20 +221,20 @@ const styles = `
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
-    border: 1px solid #e2e8f0;
+    border: 1px solidrgb(252, 252, 252);
     color: #000000;
     outline: none;
     transition: border-color 0.3s ease;
   }
 
   .custom-input:focus {
-    border-color: #5e72e4;
-    box-shadow: 0 0 0 2px rgba(94, 114, 228, 0.2);
+    border-color:rgb(223, 167, 13);
+    box-shadow: 0 0 0 2px rgba(207, 161, 10, 0.2);
   }
 
   .login-button {
     width: 100%;
-    background-color: #5e72e4;
+    background-color:rgb(243, 170, 11);
     color: #ffffff;
     height: 48px;
     border: none;
@@ -247,11 +247,11 @@ const styles = `
 
   .login-button:hover,
   .login-button:focus {
-    background-color: #4a5acf;
+    background-color:rgb(214, 167, 11);
   }
 
   .login-button:active {
-    background-color: #3c49b0;
+    background-color:rgb(218, 144, 8);
   }
 
   .register-link {
@@ -269,7 +269,7 @@ const styles = `
   }
 
   .register-button:hover {
-    color:rgba(73, 219, 6, 0.72);
+    color:rgba(206, 137, 10, 0.72);
     text-decoration: underline;
   }
 

@@ -132,7 +132,7 @@ const Register: React.FC = () => {
                                 placeholder="Enter a unique username"
                                 value={username}
                                 onIonChange={e => setUsername(e.detail.value!)}
-                                style={{ '--color': '#000000' }}
+                                style={{ '--color': '#ff9900' }}
                             />
                         </div>
 
@@ -147,7 +147,7 @@ const Register: React.FC = () => {
                                     placeholder="Enter first name"
                                     value={firstName}
                                     onIonChange={e => setFirstName(e.detail.value!)}
-                                    style={{ '--color': '#000000' }}
+                                    style={{ '--color': '#ff9900' }}
                                 />
                             </div>
                             <div className="form-group half-width">
@@ -160,7 +160,7 @@ const Register: React.FC = () => {
                                     placeholder="Enter last name"
                                     value={lastName}
                                     onIonChange={e => setLastName(e.detail.value!)}
-                                    style={{ '--color': '#000000' }}
+                                    style={{ '--color': '#ff9900' }}
                                 />
                             </div>
                         </div>
@@ -175,7 +175,7 @@ const Register: React.FC = () => {
                                 placeholder="youremail@nbsc.edu.ph"
                                 value={email}
                                 onIonChange={e => setEmail(e.detail.value!)}
-                                style={{ '--color': '#000000' }}
+                                style={{ '--color': '#ff9900' }}
                             />
                         </div>
 
@@ -189,7 +189,7 @@ const Register: React.FC = () => {
                                 placeholder="Enter password"
                                 value={password}
                                 onIonChange={e => setPassword(e.detail.value!)}
-                                style={{ '--color': '#000000' }}
+                                style={{ '--color': '#ff9900' }}
                             >
                                 <IonInputPasswordToggle slot="end" />
                             </IonInput>
@@ -205,7 +205,7 @@ const Register: React.FC = () => {
                                 placeholder="Confirm password"
                                 value={confirmPassword}
                                 onIonChange={e => setConfirmPassword(e.detail.value!)}
-                                style={{ '--color': '#000000' }}
+                                style={{ '--color': '#ff9900' }}
                             >
                                 <IonInputPasswordToggle slot="end" />
                             </IonInput>
@@ -309,6 +309,16 @@ const Register: React.FC = () => {
 
             <style>{`
                 .register-container {
+                   display: flex;
+                   flex-direction: column;
+                   align-items: center;
+                   justify-content: center;
+                   min-height: 100vh;
+                   padding: 20px;
+                   background: linear-gradient(to bottom right,rgba(226, 156, 5, 0.9),rgb(0, 0, 0)); /* Light gradient background */
+                }
+
+                .register-container {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
@@ -319,11 +329,11 @@ const Register: React.FC = () => {
                 
                 .register-card {
                     width: 100%;
-                    max-width: 500px;
+                    max-width: 600px;
                     background: white;
                     border-radius: 16px;
                     padding: 32px;
-                    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+                    box-shadow: 0 4px 16px rgba(221, 104, 104, 0.1);
                 }
                 
                 .header-section {
@@ -332,7 +342,7 @@ const Register: React.FC = () => {
                 }
                 
                 .back-button {
-                    --color:rgb(84, 255, 98);
+                    --color:rgba(218, 172, 21, 0.81);
                     margin-bottom: 16px;
                     align-self: flex-start;
                 }
@@ -345,11 +355,11 @@ const Register: React.FC = () => {
                 
                 .logo-icon {
                     font-size: 64px;
-                    color:rgb(27, 121, 9);
+                    color:rgb(238, 186, 15);
                 }
                 
                 .register-title {
-                    color:rgb(0, 0, 0);
+                    color:rgb(226, 150, 8);
                     margin-bottom: 8px;
                     font-size: 24px;
                     font-weight: 600;
@@ -376,20 +386,20 @@ const Register: React.FC = () => {
                 
                 .custom-input {
                     --border-radius: 8px;
-                    --border-color: #e2e8f0;
-                    --highlight-color-focused:rgb(92, 226, 59);
+                    --border-color:rgb(236, 203, 11);
+                    --highlight-color-focused:rgb(243, 203, 23);
                     --color: #000000;
                 }
                 
                 .register-button {
-                    --background:rgb(152, 211, 125);
-                    --background-activated:rgb(141, 230, 132);
-                    --background-focused:rgb(149, 235, 115);
-                    --background-hover:rgb(106, 221, 112);
+                    --background:rgb(238, 196, 9);
+                    --background-activated:rgb(230, 188, 5);
+                    --background-focused:rgb(233, 192, 12);
+                    --background-hover:rgb(238, 185, 11);
                     margin-top: 24px;
                     height: 48px;
                     font-weight: 600;
-                     --color:rgb(27, 221, 27); 
+                     --color:rgb(245, 202, 12); 
                 }
                 
                 .login-link {
@@ -398,11 +408,11 @@ const Register: React.FC = () => {
                     justify-content: center;
                     margin-top: 16px;
                     gap: 4px;
-                    color: #000000;
+                    color:rgba(3, 3, 3, 0.97);
                 }
                 
                 .login-button {
-                    --color: #000000;
+                    --color:rgb(238, 185, 9);
                     font-size: 14px;
                 }
                 
@@ -429,7 +439,7 @@ const Register: React.FC = () => {
                 }
                 
                 .verification-subtitle {
-                    color:rgb(171, 255, 189);
+                    color:rgb(245, 180, 40);
                     font-size: 14px;
                 }
                 
@@ -443,14 +453,14 @@ const Register: React.FC = () => {
                 
                 .detail-label {
                     display: block;
-                    color: #718096;
+                    color:rgb(241, 191, 24);
                     font-size: 14px;
                     margin-bottom: 4px;
                 }
                 
                 .detail-value {
                     display: block;
-                    color: #2d3748;
+                    color:rgba(248, 179, 30, 0.97);
                     font-size: 16px;
                     font-weight: 500;
                 }
@@ -463,11 +473,11 @@ const Register: React.FC = () => {
                 }
                 
                 .cancel-button {
-                    --color: #718096;
+                    --color:rgb(245, 190, 9);
                 }
                 
                 .confirm-button {
-                    --background:rgb(75, 255, 75);
+                    --background:rgb(255, 176, 7);
                 }
                 
                 /* Success Modal Styles */
@@ -487,14 +497,14 @@ const Register: React.FC = () => {
                 }
                 
                 .success-title {
-                    color: #2d3748;
+                    color:rgb(241, 171, 39);
                     font-size: 24px;
                     font-weight: 600;
                     margin-bottom: 16px;
                 }
                 
                 .success-message {
-                    color: #718096;
+                    color:rgb(224, 185, 9);
                     margin-bottom: 32px;
                 }
                 
@@ -503,7 +513,7 @@ const Register: React.FC = () => {
                 }
                 
                 .success-button {
-                    --background:rgb(139, 209, 130);
+                    --background:rgb(243, 189, 12);
                     width: 100%;
                     max-width: 200px;
                 }
