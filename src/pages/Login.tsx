@@ -228,7 +228,7 @@ const styles = `
   }
 
   .custom-input:focus {
-    border-color:rgb(223, 167, 13);
+    border-color:rgb(219, 161, 0);
     box-shadow: 0 0 0 2px rgba(207, 161, 10, 0.2);
   }
 
@@ -247,7 +247,7 @@ const styles = `
 
   .login-button:hover,
   .login-button:focus {
-    background-color:rgb(214, 167, 11);
+    background-color:rgb(218, 150, 4);
   }
 
   .login-button:active {
@@ -269,7 +269,7 @@ const styles = `
   }
 
   .register-button:hover {
-    color:rgba(206, 137, 10, 0.72);
+    color:rgba(201, 132, 4, 0.72);
     text-decoration: underline;
   }
 
