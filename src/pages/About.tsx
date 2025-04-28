@@ -27,31 +27,31 @@ const About: React.FC = () => {
           <IonItem>
             <IonLabel>
               <h2>Full Name</h2>
-              <p>Juan Dela Cruz</p>
+              <p>MAGSALSO, MJ OBSID</p>
             </IonLabel>
           </IonItem>
           <IonItem>
             <IonLabel>
               <h2>Age</h2>
-              <p>25</p>
+              <p>20</p>
             </IonLabel>
           </IonItem>
           <IonItem>
             <IonLabel>
               <h2>Address</h2>
-              <p>Cebu City, Philippines</p>
+              <p>Gay Street,DALIRIG, MF,BUKIDNON, Philippines</p>
             </IonLabel>
           </IonItem>
           <IonItem>
             <IonLabel>
               <h2>Email</h2>
-              <p>juan@example.com</p>
+              <p>mjobsidmagsalos@gmail.com</p>
             </IonLabel>
           </IonItem>
           <IonItem>
             <IonLabel>
               <h2>Phone</h2>
-              <p>0912-345-6789</p>
+              <p>0967-587-5803</p>
             </IonLabel>
           </IonItem>
         </IonList>
