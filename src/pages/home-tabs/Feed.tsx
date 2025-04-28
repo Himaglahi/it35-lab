@@ -1,9 +1,15 @@
 import { 
   IonButtons,
+    IonCard,
+    IonCardContent,
+    IonCardHeader,
+    IonCardSubtitle,
+    IonCardTitle,
     IonContent, 
     IonHeader, 
     IonMenuButton, 
     IonPage, 
+    IonSearchbar, 
     IonTitle, 
     IonToolbar 
 } from '@ionic/react';
@@ -18,10 +24,12 @@ const Feed: React.FC = () => {
             <IonMenuButton></IonMenuButton>
           </IonButtons>
           <IonTitle>Feed</IonTitle>
+          
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <FeedContainer />
+      
+    <FeedContainer />
       </IonContent>
     </IonPage>
   );
