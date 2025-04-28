@@ -33,7 +33,9 @@ const FeedContainer = () => {
   const [popoverState, setPopoverState] = useState<{ open: boolean; event: Event | null; postId: string | null }>({ open: false, event: null, postId: null });
   const [searchText, setSearchText] = useState('');
 
-  const [reactions, setReactions] = useState<{ [key: string]: { like: number; heart: number; laugh: number } }>({});
+  const [reactions, setReactions] = useState<{
+    [key: string]: { like: number; heart: number; laugh: number; surprised: number; sad: number; angry: number }
+  }>({});
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -57,9 +59,18 @@ const FeedContainer = () => {
       setPosts(data || []);
       setFilteredPosts(data || []);
 
-      const initialReactions: { [key: string]: { like: number; heart: number; laugh: number } } = {};
+      const initialReactions: {
+        [key: string]: { like: number; heart: number; laugh: number; surprised: number; sad: number; angry: number }
+      } = {};
       (data || []).forEach(post => {
-        initialReactions[post.post_id] = { like: 0, heart: 0, laugh: 0 };
+        initialReactions[post.post_id] = {
+          like: 0,
+          heart: 0,
+          laugh: 0,
+          surprised: 0,
+          sad: 0,
+          angry: 0,
+        };
       });
       setReactions(initialReactions);
     };
@@ -132,12 +143,12 @@ const FeedContainer = () => {
     }
   };
 
-  const handleReaction = (postId: string, type: 'like' | 'heart' | 'laugh') => {
+  const handleReaction = (postId: string, type: 'like' | 'heart' | 'laugh' | 'surprised' | 'sad' | 'angry') => {
     setReactions(prev => ({
       ...prev,
       [postId]: {
         ...prev[postId],
-        [type]: prev[postId][type] + 1,
+        [type]: (prev[postId]?.[type] || 0) + 1,
       },
     }));
   };
@@ -147,14 +158,12 @@ const FeedContainer = () => {
       <IonContent fullscreen className="ion-padding">
         {user ? (
           <>
-            {/* Single Searchbar sa taas */}
             <IonSearchbar
               value={searchText}
               onIonInput={e => setSearchText(e.detail.value!)}
               placeholder="Search posts or users..."
             />
 
-            {/* Create Post Card */}
             <IonCard>
               <IonCardHeader>
                 <IonCardTitle>Create a Post</IonCardTitle>
@@ -185,7 +194,6 @@ const FeedContainer = () => {
               </IonCardContent>
             </IonCard>
 
-            {/* Post Feed */}
             {isLoading ? (
               <IonSpinner name="crescent" />
             ) : (
@@ -218,7 +226,6 @@ const FeedContainer = () => {
                       <p>{post.post_content}</p>
                     </IonText>
 
-                    {/* Reactions */}
                     <IonRow className="ion-justify-content-center ion-padding-vertical">
                       <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'like')}>
                         👍 {reactions[post.post_id]?.like || 0}
@@ -228,6 +235,15 @@ const FeedContainer = () => {
                       </IonButton>
                       <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'laugh')}>
                         😂 {reactions[post.post_id]?.laugh || 0}
+                      </IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'surprised')}>
+                        😲 {reactions[post.post_id]?.surprised || 0}
+                      </IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'sad')}>
+                        😢 {reactions[post.post_id]?.sad || 0}
+                      </IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'angry')}>
+                        😡 {reactions[post.post_id]?.angry || 0}
                       </IonButton>
                     </IonRow>
                   </IonCardContent>
@@ -249,7 +265,6 @@ const FeedContainer = () => {
         )}
       </IonContent>
 
-      {/* Edit Modal */}
       <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
         <IonHeader>
           <IonToolbar>
@@ -270,7 +285,6 @@ const FeedContainer = () => {
         </IonFooter>
       </IonModal>
 
-      {/* Toast */}
       <IonToast
         isOpen={!!toastMessage}
         onDidDismiss={() => setToastMessage('')}
