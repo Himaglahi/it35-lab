@@ -1,0 +1,20 @@
+.favorite-item {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 12px;
+    margin-bottom: 8px;
+    background-color: #f0f0f0;
+  }
+  
+  .favorite-item:hover {
+    background-color: #dceeff;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  
+  .favorite-item img {
+    border-radius: 8px;
+    height: 64px;
+    width: 64px;
+    object-fit: cover;
+  }
+  
