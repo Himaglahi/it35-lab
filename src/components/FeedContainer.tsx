@@ -8,6 +8,8 @@ import {
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../utils/supabaseClient';
 import { pencil, trash, send, ellipsisVertical } from 'ionicons/icons';
+import './FeedContainer.css';
+
 
 interface Post {
   post_id: string;
@@ -198,7 +200,7 @@ const FeedContainer = () => {
               <IonSpinner name="crescent" />
             ) : (
               filteredPosts.map(post => (
-                <IonCard key={post.post_id} className="animate__animated animate__fadeInUp">
+                <IonCard key={post.post_id} className="animate__animated animate__fadeInUp post-card-hover">
                   <IonCardHeader>
                     <IonRow>
                       <IonCol size="auto">
