@@ -1,12 +1,17 @@
 /* FeedContainer.css */
 
 .post-card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
     cursor: pointer;
+    background-color: #ffffff;
   }
   
   .post-card-hover:hover {
     transform: scale(1.01);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    background-color: #41e6e6; /* light blue effect on hover */
+  }
+  .post-content {
+    font-weight: bold;
   }
   

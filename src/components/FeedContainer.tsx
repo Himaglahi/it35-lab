@@ -8,8 +8,7 @@ import {
 import { User } from '@supabase/supabase-js';
 import { supabase } from '../utils/supabaseClient';
 import { pencil, trash, send, ellipsisVertical } from 'ionicons/icons';
-import './FeedContainer.css';
-
+import './FeedContainer.css'; // Import CSS
 
 interface Post {
   post_id: string;
@@ -200,7 +199,7 @@ const FeedContainer = () => {
               <IonSpinner name="crescent" />
             ) : (
               filteredPosts.map(post => (
-                <IonCard key={post.post_id} className="animate__animated animate__fadeInUp post-card-hover">
+                <IonCard key={post.post_id} className="post-card-hover animate__animated animate__fadeInUp">
                   <IonCardHeader>
                     <IonRow>
                       <IonCol size="auto">
@@ -224,29 +223,17 @@ const FeedContainer = () => {
                   </IonCardHeader>
 
                   <IonCardContent>
-                    <IonText>
+                    <IonText className="post-content">
                       <p>{post.post_content}</p>
                     </IonText>
 
                     <IonRow className="ion-justify-content-center ion-padding-vertical">
-                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'like')}>
-                        👍 {reactions[post.post_id]?.like || 0}
-                      </IonButton>
-                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'heart')}>
-                        ❤️ {reactions[post.post_id]?.heart || 0}
-                      </IonButton>
-                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'laugh')}>
-                        😂 {reactions[post.post_id]?.laugh || 0}
-                      </IonButton>
-                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'surprised')}>
-                        😲 {reactions[post.post_id]?.surprised || 0}
-                      </IonButton>
-                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'sad')}>
-                        😢 {reactions[post.post_id]?.sad || 0}
-                      </IonButton>
-                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'angry')}>
-                        😡 {reactions[post.post_id]?.angry || 0}
-                      </IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'like')}>👍 {reactions[post.post_id]?.like || 0}</IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'heart')}>❤️ {reactions[post.post_id]?.heart || 0}</IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'laugh')}>😂 {reactions[post.post_id]?.laugh || 0}</IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'surprised')}>😲 {reactions[post.post_id]?.surprised || 0}</IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'sad')}>😢 {reactions[post.post_id]?.sad || 0}</IonButton>
+                      <IonButton fill="clear" onClick={() => handleReaction(post.post_id, 'angry')}>😡 {reactions[post.post_id]?.angry || 0}</IonButton>
                     </IonRow>
                   </IonCardContent>
 

@@ -141,17 +141,6 @@ const Login: React.FC = () => {
 export default Login;
 
 const styles = `
-  @keyframes floatCard {
-    0%, 100% {
-      transform: translateY(0);
-      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), 0 0 20px 3px rgba(108, 99, 255, 0.6);
-    }
-    50% {
-      transform: translateY(-20px);
-      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3), 0 0 35px 7px rgba(108, 99, 255, 0.8);
-    }
-  }
-
   .login-container {
     display: flex;
     flex-direction: column;
@@ -159,17 +148,21 @@ const styles = `
     justify-content: center;
     min-height: 100vh;
     padding: 20px;
-    background: linear-gradient(to bottom right, rgba(226, 156, 6, 0.9), rgb(0, 0, 0)); 
+    background: linear-gradient(to bottom right,rgba(226, 156, 6, 0.9),rgb(0, 0, 0)); /* Light gradient background */
   }
-
+  
   .login-card {
-    width: 90%;
-    max-width: 400px;
-    background: rgb(245, 237, 237);
+    width: 300%;
+    max-width: 600px;
+    background:rgb(245, 237, 237);
     border-radius: 16px;
     padding: 32px;
-    animation: floatCard 4s ease-in-out infinite;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.89);
     transition: transform 0.2s ease-in-out;
+  }
+
+  .login-card:hover {
+    transform: translateY(-2px); /* subtle lift effect on hover */
   }
 
   .logo-container {
@@ -178,42 +171,49 @@ const styles = `
     align-items: center;
     margin-bottom: 24px;
   }
-
+  
   .logo-avatar {
     width: 100px;
     height: 100px;
-    background: rgba(14, 13, 13, 0.99);
+    background:rgba(14, 13, 13, 0.99);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 8px rgba(50, 206, 211, 0.1);
   }
-
+  
   .logo-icon {
     font-size: 80px;
-    color: rgb(5, 5, 5);
+    color:rgb(207, 144, 6);
   }
-
+  
   .login-title {
     text-align: center;
-    color: rgb(3, 3, 3);
+    color:rgb(3, 3, 3);
     margin-bottom: 8px;
     font-size: 26px;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
-
+  
   .login-subtitle {
     text-align: center;
-    color: rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
     margin-bottom: 32px;
     font-size: 15px;
     line-height: 1.4;
   }
-
+  
   .form-group {
     margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color:rgb(0, 0, 0);
   }
 
   .custom-input {
@@ -221,20 +221,20 @@ const styles = `
     padding: 12px;
     font-size: 16px;
     border-radius: 8px;
-    border: 1px solid rgb(252, 252, 252);
+    border: 1px solidrgb(252, 252, 252);
     color: #000000;
     outline: none;
     transition: border-color 0.3s ease;
   }
 
   .custom-input:focus {
-    border-color: rgb(219, 161, 0);
+    border-color:rgb(219, 161, 0);
     box-shadow: 0 0 0 2px rgba(207, 161, 10, 0.2);
   }
 
   .login-button {
     width: 100%;
-    background-color: rgb(243, 170, 11);
+    background-color:rgb(243, 170, 11);
     color: #ffffff;
     height: 48px;
     border: none;
@@ -247,25 +247,29 @@ const styles = `
 
   .login-button:hover,
   .login-button:focus {
-    background-color: rgb(218, 150, 4);
+    background-color:rgb(218, 150, 4);
+  }
+
+  .login-button:active {
+    background-color:rgb(218, 144, 8);
   }
 
   .register-link {
     text-align: center;
     margin-top: 24px;
   }
-
+  
   .register-button {
     background: none;
     border: none;
-    color: rgb(0, 0, 0);
+    color:rgb(0, 0, 0);
     font-size: 14px;
-    cursor: pointer;
+    cursor: pointer;S
     transition: color 0.2s ease;
   }
 
   .register-button:hover {
-    color: rgba(201, 132, 4, 0.72);
+    color:rgba(201, 132, 4, 0.72);
     text-decoration: underline;
   }
 
