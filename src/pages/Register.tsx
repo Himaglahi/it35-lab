@@ -308,216 +308,226 @@ const Register: React.FC = () => {
             </IonContent>
 
             <style>{`
-                .register-container {
-                   display: flex;
-                   flex-direction: column;
-                   align-items: center;
-                   justify-content: center;
-                   min-height: 100vh;
-                   padding: 20px;
-                   background: linear-gradient(to bottom right,rgba(226, 156, 5, 0.9),rgb(0, 0, 0)); /* Light gradient background */
-                }
+  /* Background and Container */
+  .register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom right, rgba(226, 156, 5, 0.9), rgb(0, 0, 0));
+  }
 
-                .register-container {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    min-height: 80vh;
-                    padding: 20px;
-                }
-                
-                .register-card {
-                    width: 100%;
-                    max-width: 600px;
-                    background: white;
-                    border-radius: 16px;
-                    padding: 32px;
-                    box-shadow: 0 4px 16px rgba(221, 104, 104, 0.1);
-                }
-                
-                .header-section {
-                    text-align: center;
-                    margin-bottom: 24px;
-                }
-                
-                .back-button {
-                    --color:rgba(218, 172, 21, 0.81);
-                    margin-bottom: 16px;
-                    align-self: flex-start;
-                }
-                
-                .logo-container {
-                    display: flex;
-                    justify-content: center;
-                    margin-bottom: 16px;
-                }
-                
-                .logo-icon {
-                    font-size: 64px;
-                    color:rgb(238, 186, 15);
-                }
-                
-                .register-title {
-                    color:rgb(226, 150, 8);
-                    margin-bottom: 8px;
-                    font-size: 24px;
-                    font-weight: 600;
-                }
-                
-                .register-subtitle {
-                    color:rgb(0, 0, 0);
-                    margin-bottom: 24px;
-                    font-size: 14px;
-                }
-                
-                .form-group {
-                    margin-bottom: 16px;
-                }
-                
-                .name-fields {
-                    display: flex;
-                    gap: 16px;
-                }
-                
-                .half-width {
-                    flex: 1;
-                }
-                
-                .custom-input {
-                    --border-radius: 8px;
-                    --border-color:rgb(236, 203, 11);
-                    --highlight-color-focused:rgb(243, 203, 23);
-                    --color: #000000;
-                }
-                
-                .register-button {
-                    --background:rgb(238, 196, 9);
-                    --background-activated:rgb(230, 188, 5);
-                    --background-focused:rgb(233, 192, 12);
-                    --background-hover:rgb(238, 185, 11);
-                    margin-top: 24px;
-                    height: 48px;
-                    font-weight: 600;
-                     --color:rgb(245, 202, 12); 
-                }
-                
-                .login-link {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    margin-top: 16px;
-                    gap: 4px;
-                    color:rgba(3, 3, 3, 0.97);
-                }
-                
-                .login-button {
-                    --color:rgb(238, 185, 9);
-                    font-size: 14px;
-                }
-                
-                /* Verification Modal Styles */
-                .modal-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    min-height: 100%;
-                    padding: 20px;
-                }
-                
-                .verification-card {
-                    width: 100%;
-                    max-width: 500px;
-                    border-radius: 16px;
-                    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-                }
-                
-                .verification-title {
-                    font-size: 20px;
-                    font-weight: 600;
-                    color: #2d3748;
-                }
-                
-                .verification-subtitle {
-                    color:rgb(245, 180, 40);
-                    font-size: 14px;
-                }
-                
-                .verification-content {
-                    padding: 16px;
-                }
-                
-                .detail-item {
-                    margin-bottom: 16px;
-                }
-                
-                .detail-label {
-                    display: block;
-                    color:rgb(241, 191, 24);
-                    font-size: 14px;
-                    margin-bottom: 4px;
-                }
-                
-                .detail-value {
-                    display: block;
-                    color:rgba(248, 179, 30, 0.97);
-                    font-size: 16px;
-                    font-weight: 500;
-                }
-                
-                .modal-actions {
-                    display: flex;
-                    justify-content: flex-end;
-                    padding: 16px;
-                    gap: 8px;
-                }
-                
-                .cancel-button {
-                    --color:rgb(245, 190, 9);
-                }
-                
-                .confirm-button {
-                    --background:rgb(255, 176, 7);
-                }
-                
-                /* Success Modal Styles */
-                .success-modal {
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    text-align: center;
-                    height: 100%;
-                    padding: 32px;
-                }
-                
-                .success-icon {
-                    font-size: 64px;
-                    margin-bottom: 24px;
-                }
-                
-                .success-title {
-                    color:rgb(241, 171, 39);
-                    font-size: 24px;
-                    font-weight: 600;
-                    margin-bottom: 16px;
-                }
-                
-                .success-message {
-                    color:rgb(224, 185, 9);
-                    margin-bottom: 32px;
-                }
-                
-                .success-message p {
-                    margin: 8px 0;
-                }
-                
-                .success-button {
-                    --background:rgb(243, 189, 12);
-                    width: 100%;
-                    max-width: 200px;
-                }
-            `}</style>
+  /* Floating Animation for Card */
+  @keyframes floatCard {
+    0%, 100% {
+      transform: translateY(0);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2), 0 0 20px 3px rgba(108, 99, 255, 0.6);
+    }
+    50% {
+      transform: translateY(-20px);
+      box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3), 0 0 35px 7px rgba(108, 99, 255, 0.8);
+    }
+  }
+
+  /* Card Style with Animation */
+  .register-card {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    animation: floatCard 4s ease-in-out infinite;
+  }
+
+  /* Header Section */
+  .header-section {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  .back-button {
+    --color: rgba(218, 172, 21, 0.81);
+    margin-bottom: 16px;
+    align-self: flex-start;
+  }
+
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .logo-icon {
+    font-size: 64px;
+    color: rgb(238, 186, 15);
+  }
+
+  .register-title {
+    color: rgb(226, 150, 8);
+    margin-bottom: 8px;
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .register-subtitle {
+    color: rgb(0, 0, 0);
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  /* Form Inputs */
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .name-fields {
+    display: flex;
+    gap: 16px;
+  }
+
+  .half-width {
+    flex: 1;
+  }
+
+  .custom-input {
+    --border-radius: 8px;
+    --border-color: rgb(236, 203, 11);
+    --highlight-color-focused: rgb(243, 203, 23);
+    --color: #000000;
+  }
+
+  /* Register Button */
+  .register-button {
+    --background: rgb(238, 196, 9);
+    --background-activated: rgb(230, 188, 5);
+    --background-focused: rgb(233, 192, 12);
+    --background-hover: rgb(238, 185, 11);
+    margin-top: 24px;
+    height: 48px;
+    font-weight: 600;
+    --color: rgb(245, 202, 12);
+  }
+
+  /* Login Link */
+  .login-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 16px;
+    gap: 4px;
+    color: rgba(3, 3, 3, 0.97);
+  }
+
+  .login-button {
+    --color: rgb(238, 185, 9);
+    font-size: 14px;
+  }
+
+  /* Verification Modal */
+  .modal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 20px;
+  }
+
+  .verification-card {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .verification-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #2d3748;
+  }
+
+  .verification-subtitle {
+    color: rgb(245, 180, 40);
+    font-size: 14px;
+  }
+
+  .verification-content {
+    padding: 16px;
+  }
+
+  .detail-item {
+    margin-bottom: 16px;
+  }
+
+  .detail-label {
+    display: block;
+    color: rgb(241, 191, 24);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .detail-value {
+    display: block;
+    color: rgba(248, 179, 30, 0.97);
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px;
+    gap: 8px;
+  }
+
+  .cancel-button {
+    --color: rgb(245, 190, 9);
+  }
+
+  .confirm-button {
+    --background: rgb(255, 176, 7);
+  }
+
+  /* Success Modal */
+  .success-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    padding: 32px;
+  }
+
+  .success-icon {
+    font-size: 64px;
+    margin-bottom: 24px;
+  }
+
+  .success-title {
+    color: rgb(241, 171, 39);
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .success-message {
+    color: rgb(224, 185, 9);
+    margin-bottom: 32px;
+  }
+
+  .success-message p {
+    margin: 8px 0;
+  }
+
+  .success-button {
+    --background: rgb(243, 189, 12);
+    width: 100%;
+    max-width: 200px;
+  }
+`}</style>
         </IonPage>
     );
 };
